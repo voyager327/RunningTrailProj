@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Running_Trails.Models.Runner>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SearchRunningTrailsByLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SearchRunningTrailsByDifficultyLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SearchRunningTrailsByTotalDistance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SearchRunningGroupByArea)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SearchRunningTrailsByLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SearchRunningTrailsByDifficultyLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SearchRunningTrailsByTotalDistance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SearchRunningGroupByArea)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RunnerId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RunnerId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RunnerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿@model Running_Trails.Models.Runner
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Runner</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchRunningTrailsByLocation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SearchRunningTrailsByLocation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchRunningTrailsByDifficultyLevel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SearchRunningTrailsByDifficultyLevel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchRunningTrailsByTotalDistance)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SearchRunningTrailsByTotalDistance)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchRunningGroupByArea)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SearchRunningGroupByArea)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.RunnerId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

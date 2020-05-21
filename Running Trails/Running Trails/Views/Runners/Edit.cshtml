@@ -1,0 +1,49 @@
+﻿@model Running_Trails.Models.Runner
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Runner</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RunnerId" />
+            <div class="form-group">
+                <label asp-for="SearchRunningTrailsByLocation" class="control-label"></label>
+                <input asp-for="SearchRunningTrailsByLocation" class="form-control" />
+                <span asp-validation-for="SearchRunningTrailsByLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SearchRunningTrailsByDifficultyLevel" class="control-label"></label>
+                <input asp-for="SearchRunningTrailsByDifficultyLevel" class="form-control" />
+                <span asp-validation-for="SearchRunningTrailsByDifficultyLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SearchRunningTrailsByTotalDistance" class="control-label"></label>
+                <input asp-for="SearchRunningTrailsByTotalDistance" class="form-control" />
+                <span asp-validation-for="SearchRunningTrailsByTotalDistance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SearchRunningGroupByArea" class="control-label"></label>
+                <input asp-for="SearchRunningGroupByArea" class="form-control" />
+                <span asp-validation-for="SearchRunningGroupByArea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
